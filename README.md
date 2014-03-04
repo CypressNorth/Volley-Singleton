@@ -32,6 +32,14 @@ On line 15 of the VolleySingleton.java class, update the context to be fetched f
 mRequestQueue = Volley.newRequestQueue(MyApplication.getAppContext());
 ```
 
+*Also make sure that MyApplication is defined in your manifest*
+
+```XML
+<application android:name="com.company.MyApplication">
+
+</application>
+```
+
 ##Use it in your code
 **Import the Volley packages**
 
