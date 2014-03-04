@@ -23,6 +23,15 @@ https://android.googlesource.com/platform/frameworks/volley/
 ##Add VolleySingleton.java
 Include the VolleySingleton.java class from this repository in your Android application. 
 
+##Update the singleton AppContext
+On line 15 of the VolleySingleton.java class, update the context to be fetched from your Application class. 
+
+*There is a sample of what your Application class might look like in the MyApplication.java file.*
+
+```Java
+mRequestQueue = Volley.newRequestQueue(MyApplication.getAppContext());
+```
+
 ##Use it in your code
 **Import the Volley packages**
 
@@ -47,7 +56,7 @@ Include the VolleySingleton.java class from this repository in your Android appl
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mImageLoader = VolleySingleton.getInstance(this.getActivity()).getImageLoader();
+        mImageLoader = VolleySingleton.getInstance().getImageLoader();
     }
 ```
 
